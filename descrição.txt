@@ -1,0 +1,6 @@
+Este projeto é uma forma de ajustar um rasunho
+de classe que escrevi algum tempo atrás.
+A finalidade desta classe é a construção de
+subclasses capazer de construir de forma rápida e
+prática interfaces gráficas e de modo texto
+para confecção de aplicativos.
