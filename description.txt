@@ -1,0 +1,1 @@
+This project is a way to adjust a class rasunho I wrote some time ago.The purpose of this class is to build subclasses capable of quickly and practically constructing graphical and text interfaces.Its application is the making of applications, faster.
