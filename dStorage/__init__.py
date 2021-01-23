@@ -2,4 +2,4 @@
 to make GUI interface and console interface generation dinamicaly.'''
 ''' Classe para abstração e controle de objetos e banco de dados
 associados aos mesmos '''
-__version__ = "0.0.1a02"
+__version__ = "0.0.1a3"
