@@ -5,12 +5,10 @@ from tkinter import *
 from random import *
 import array
 '''classe abstrata poliórfica para abstração de dados usando SQLite.'''
-
+''' construtora da classe '''
 class dStorage:
     
-    
     def __init__(self,pdata, pindex):
-''' construtora da classe '''
         self.pdata = pdata
         self.pindex = pindex
         self.lbl = []
@@ -19,17 +17,15 @@ class dStorage:
         self.table = ""
         self.regdata = []
         self.updted = 0
-# função de exibição dos dados texto...
-
+    ''' exibe os conteúdos de dados e índices, modo texto '''
+    
     def show(self):
-''' exibe os conteúdos de dados e índices, modo texto '''
         print("informações:")
         for i in range(len(self.pdata)):
             print(self.pindex[i],": ", self.pdata[i])
-#função de exibição dos dados gui....
-
+    ''' exibe os conteúdos de dados e índices, modo gráfico '''
+    
     def display(self):
-''' exibe os conteúdos de dados e índices, modo dráfico '''
             window =Tk()
             window.configure(background='blue')
             window.title("Visualização de aramazenamento de dados!")
@@ -44,10 +40,9 @@ class dStorage:
                 output.insert(END, "\n")
 
             window.mainloop()
-# função de criação da base de sados SQLite...
-
+            
+    ''' cria base de dados '''
     def cdBase(self):
-''' cria base de dados '''
         database = os.getenv("HOME") +"/"+  self.database + ".db"
         '''print (("db name: " + database),"\n")'''
         con = sqlite3.connect(self.database)
@@ -68,9 +63,9 @@ class dStorage:
         print("db creation string:"+ cstring + "\n")
         c.execute(cstring)
         '''print ("database created!")'''
-
+        
+    ''' lê os índices a partir do canco de dados '''
     def l_pdindex(self):
-''' lê os índices a partir do canco de dados '''
         con = sqlite3.connect(self.database)
         c = con.cursor()
         sql = "PRAGMA table_info("+ self.table +")"
@@ -86,8 +81,7 @@ class dStorage:
             
         con.close()
 
-''' armazena dados de registro '''
-
+    ''' armazena dados de registro '''
     def savecad(self):
         i=0
         self.regdata= []
@@ -98,9 +92,8 @@ class dStorage:
         self.pdata = self.regdata
         self.savedata()
 
-
+    ''' salva os dados do registro atual em sua tabela '''
     def savedata(self):
-''' salva os dados do registro atual em sua tabela '''
         con = sqlite3.connect(self.database)
         c = con.cursor()
         dfields = ""
@@ -122,9 +115,8 @@ class dStorage:
         self.updted = 1
         con.close()
     
-
+    ''' realiza a leitura dos dados membros da instância '''
     def loaddata(self,  reg):
-''' realiza a leitura dos dados membros da instância '''
         con = sqlite3.connect(self.database)
         c = con.cursor()
         cstring= str("SELECT * FROM " + self.table + " WHERE id=:ireg")
@@ -138,9 +130,8 @@ class dStorage:
             i += 1
         con.close()
 
-        
+    ''' carrega os os dados membros da instância '''
     def getid(self, name):
-''' carrega os os dados membros da instância '''
         con = sqlite3.connect(self.database)
         c = con.cursor()
         searchstring= str("SELECT * FROM " + self.table + " WHERE nome=:iname")
@@ -149,17 +140,14 @@ class dStorage:
         return rst.fetchone()
         con.close()
 
-# função de seleção de base de dados...
-
+    ''' seleciona a base de dados '''
     def setdb(self, dbname, tbname):
-''' seleciona a base de dados '''
         self.database = os.getenv("HOME") +"/"+  dbname + ".db"
         self.table = tbname
         '''print ("db name: " + database)'''
         
-
+    ''' lista so dados membros filtrados por id '''
     def litems(self):
-''' lista so dados membros filtrados por id '''
         con = sqlite3.connect(self.database)
         c = con.cursor()
         c.execute(("SELECT id FROM " + self.table))
@@ -167,9 +155,8 @@ class dStorage:
         result = c.fetchall()
         return result
         
-        
+    ''' faz a leitura dos índices de dados da instância '''
     def lnames(self, i):
-''' faz a leitura dos índices de dados da instância '''
         con = sqlite3.connect(self.database)
         c = con.cursor()
         sqlstring = "SELECT "+ self.pindex[i] +" FROM " + self.table
@@ -178,9 +165,9 @@ class dStorage:
         result = c.fetchall()
         return result
         con.close()
-
+        
+    ''' realiza o cadastro usando interface gráfica '''
     def cad(self):
-''' realiza o cadastro usando interface gráfica '''
         wnd = Tk()
         wnd.configure(background="blue")
         self.lbl= []
@@ -200,10 +187,8 @@ class dStorage:
         wnd.mainloop()
         return self.updted
 
-# função de entrada de dados membro texto....
-
+    ''' realiza o cadastro em modo texto '''
     def registrar(self):
-''' realiza o cadastro em modo texto '''
         print ("cadastro de informações")
         listd = []
         for item in self.pindex:
