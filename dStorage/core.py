@@ -4,10 +4,9 @@ import sys, os, sqlite3
 from tkinter import *
 from random import *
 import array
-# classe abstrata poliórfica para abstração de dados usando SQLite.
-
+'''classe abstrata poliórfica para abstração de dados usando SQLite.'''
+''' construtora da classe '''
 class dStorage:
-    
     
     def __init__(self,pdata, pindex):
         self.pdata = pdata
@@ -18,14 +17,14 @@ class dStorage:
         self.table = ""
         self.regdata = []
         self.updted = 0
-# função de exibição dos dados texto...
-
+    ''' exibe os conteúdos de dados e índices, modo texto '''
+    
     def show(self):
         print("informações:")
         for i in range(len(self.pdata)):
             print(self.pindex[i],": ", self.pdata[i])
-#função de exibição dos dados gui....
-
+    ''' exibe os conteúdos de dados e índices, modo gráfico '''
+    
     def display(self):
             window =Tk()
             window.configure(background='blue')
@@ -41,8 +40,8 @@ class dStorage:
                 output.insert(END, "\n")
 
             window.mainloop()
-# função de criação da base de sados SQLite...
-
+            
+    ''' cria base de dados '''
     def cdBase(self):
         database = os.getenv("HOME") +"/"+  self.database + ".db"
         '''print (("db name: " + database),"\n")'''
@@ -64,7 +63,8 @@ class dStorage:
         print("db creation string:"+ cstring + "\n")
         c.execute(cstring)
         '''print ("database created!")'''
-
+        
+    ''' lê os índices a partir do canco de dados '''
     def l_pdindex(self):
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -81,8 +81,7 @@ class dStorage:
             
         con.close()
 
-# função para armazenar os dados membros na base dados...
-
+    ''' armazena dados de registro '''
     def savecad(self):
         i=0
         self.regdata= []
@@ -93,8 +92,7 @@ class dStorage:
         self.pdata = self.regdata
         self.savedata()
 
-# funao de inserção de dados em base de dados SQLite...
-
+    ''' salva os dados do registro atual em sua tabela '''
     def savedata(self):
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -117,8 +115,7 @@ class dStorage:
         self.updted = 1
         con.close()
     
-
-# funao de carga de dados da base SQLite em objeto membro....
+    ''' realiza a leitura dos dados membros da instância '''
     def loaddata(self,  reg):
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -133,8 +130,7 @@ class dStorage:
             i += 1
         con.close()
 
-#função de recarga de id de ddos membro....
-        
+    ''' carrega os os dados membros da instância '''
     def getid(self, name):
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -144,15 +140,13 @@ class dStorage:
         return rst.fetchone()
         con.close()
 
-# função de seleção de base de dados...
-
+    ''' seleciona a base de dados '''
     def setdb(self, dbname, tbname):
         self.database = os.getenv("HOME") +"/"+  dbname + ".db"
         self.table = tbname
         '''print ("db name: " + database)'''
         
-# função de listagem de dados membro por id...
-
+    ''' lista so dados membros filtrados por id '''
     def litems(self):
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -161,8 +155,7 @@ class dStorage:
         result = c.fetchall()
         return result
         
-        
-# função de listagem de nomes/chaves dos dados membro....
+    ''' faz a leitura dos índices de dados da instância '''
     def lnames(self, i):
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -172,8 +165,8 @@ class dStorage:
         result = c.fetchall()
         return result
         con.close()
-# função de cadastro de dados membro gui....
-
+        
+    ''' realiza o cadastro usando interface gráfica '''
     def cad(self):
         wnd = Tk()
         wnd.configure(background="blue")
@@ -194,8 +187,7 @@ class dStorage:
         wnd.mainloop()
         return self.updted
 
-# função de entrada de dados membro texto....
-
+    ''' realiza o cadastro em modo texto '''
     def registrar(self):
         print ("cadastro de informações")
         listd = []
