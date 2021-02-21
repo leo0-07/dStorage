@@ -1,0 +1,17 @@
+## here the author made some examples of lib usage.
+## first aplication creation.
+1stApp construct an application using the dStorage class.
+the class construct a database from data and keys.
+on this application user input some data on database
+using GUI interface.
+## second application recreation.
+2stApp recreate the application structure from
+database structure.
+
+
+
+
+
+
+				Leonardo de Araújo Lima.
+				(leonardo@asl-sl.com.br)
