@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from dStorage.core import dStorage
 
 def main():
