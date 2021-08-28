@@ -6,7 +6,7 @@ def main():
     App.setdb("test","my_table")
     App.l_pdindex()
     App.litems()
-    App.loaddata(0)
+    App.loaddata(1)
     App.display()
 
     
