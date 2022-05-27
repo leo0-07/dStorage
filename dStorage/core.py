@@ -151,6 +151,15 @@ class dStorage:
             i += 1
         con.close()
 
+    '''excluir registros'''
+    def deletedata(self,  reg):
+        con = sqlite3.connect(self.database)
+        c = con.cursor()
+        cstring= str("DELETE FROM " + self.table + " WHERE id=:ireg")
+        rst= c.execute(cstring, {"ireg":reg})
+        con.commit()
+        con.close()
+    '''### ###'''
     ''' carrega os os dados membros da instância '''
     def getid(self, name):
         con = sqlite3.connect(self.database)
