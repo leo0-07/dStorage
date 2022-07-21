@@ -9,9 +9,9 @@ Examples of usage are included in examples directory.
 
 My first studdies are turned to only build an simple environment.
 
-This environment create sqlite database, and make one integration with this database and Tk ***GUI* and __CLI__ simple iterfaces.
+This environment create sqlite database, and make one integration with this database and Tk **GUI** and __CLI__ simple iterfaces.
 
-On the second moment i try made one CLI interface on same database controoled by class.
+On the second moment i try made one CLI interface on same database controlled by base class structures.
 
 This goal, are satisfied.
 
