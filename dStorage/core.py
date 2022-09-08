@@ -161,10 +161,10 @@ class dStorage:
         con.close()
     '''### ###'''
     ''' carrega os os dados membros da instância '''
-    def getid(self, name):
+    def getid(self, iname, value):
         con = sqlite3.connect(self.database)
         c = con.cursor()
-        searchstring= str("SELECT * FROM " + self.table + " WHERE nome=:iname")
+        searchstring= str("SELECT * FROM " + self.table + " WHERE iname=:value")
         rst= c.execute(searchstring, {"iname":name})
         con.commit()
         return rst.fetchone()
