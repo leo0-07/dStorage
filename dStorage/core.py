@@ -165,7 +165,7 @@ class dStorage:
         con = sqlite3.connect(self.database)
         c = con.cursor()
         searchstring= str("SELECT * FROM " + self.table + " WHERE iname=:value")
-        rst= c.execute(searchstring, {"iname":name})
+        rst= c.execute(searchstring, {"iname":iname})
         con.commit()
         return rst.fetchone()
         con.close()
