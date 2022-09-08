@@ -161,13 +161,14 @@ class dStorage:
         con.close()
     '''### ###'''
     ''' carrega os os dados membros da instância '''
-    def getid(self, iname, value):
+    def getid(self, name, value):
         con = sqlite3.connect(self.database)
         c = con.cursor()
-        searchstring= str("SELECT * FROM " + self.table + " WHERE iname=:value")
-        rst= c.execute(searchstring, {"iname":iname})
-        con.commit()
+        searchstring= str("SELECT id FROM " + self.table + " WHERE "+ name + "='" +  value +"'")
+        print(searchstring)
+        rst = c.execute(searchstring)
         return rst.fetchone()
+        c.commit()
         con.close()
 
     ''' seleciona a base de dados '''
