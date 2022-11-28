@@ -25,12 +25,7 @@ import sys, os, sqlite3
 from tkinter import *
 from random import *
 import array
-from distutils.core import setup
-setup(name='dStorage',
-      version='1.0b',
-      py_modules=['dStorage'],
 
-'''polymorphic abstract class for data abstraction using SQLite.class constructor '''
 class dStorage:
     
     def __init__(self,pdata, pindex):
