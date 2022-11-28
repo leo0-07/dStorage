@@ -20,3 +20,9 @@
     This program comes with ABSOLUTELY NO WARRANTY
     This is free software, and you are welcome to redistribute it '''
 __version__ = "0.0.1a7"
+from distutils.core import setup
+setup(name='dStorage',
+      version='1.0b',
+      py_modules=['dStorage'],
+)
+

@@ -40,6 +40,9 @@ During a long time i teach use, administration and development with varios UNIX 
 Excuse some troubles in my codes, i try be better....
 
 Grateful.
+Special thanks to python comunity for the oportunity to try colaborate.
+Escuse for my troublrd in pakage construction, i need mor prative and for me is hard to start on the right way. Some lectures are not clearly for my compreension, and i only ca sey escuse for my limitations.
+
 
 [**Website studdies:**](http://www.asl-sl.com.br)
 
