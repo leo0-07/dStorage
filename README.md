@@ -13,6 +13,11 @@ This environment create sqlite database, and make one integration with this data
 
 On the second moment i try made one CLI interface on same database controlled by base class structures.
 
+> Now i need learn and write the pacckge structure on the right way, following the rules to 
+> devel python applications. at moment this software work, but i think with it is only an 
+> outline.
+
+
 This goal, are satisfied.
 
 The base class, is based in one multidimensional array data type.
