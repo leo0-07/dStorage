@@ -1,15 +1,24 @@
 # asl-sl
-the goal of the dStorage class is studdy and implements some other classes.
-The project structure need an special atention for github use.
+
+Academia do software livre.
+
+São Lourenço, Minas Gerais - Brazil.
+
+
+the goal of the dStorage meta class is studdy and implements some other classes.
+
+The project structure need an special atention for learn in github usage.
+
 the dStorage class give some funcions to create databases, and automaticaly
-generate an gui and console interface for the class database.
+generate an gui and console interface for the data class and database.
+
 Examples of usage are included in examples directory.
 
 ## first versions.
 
 My first studdies are turned to only build an simple environment.
 
-This environment create sqlite database, and make one integration with this database and Tk **GUI** and __CLI__ simple iterfaces.
+This environment create SQLite database, and make one integration with this database and Tk **GUI** and __CLI__ simple iterfaces.
 
 On the second moment i try made one CLI interface on same database controlled by base class structures.
 
@@ -36,7 +45,7 @@ One rule for base class use, is at moment, is needed one data member "id" on any
 
 The current version have insert, select, drop, data functions.
 
-[contacts/contato:](mailto:feraleomg@gmail.com)
+[contact/contato:](mailto:feraleomg@gmail.com)
 
 I have some time studding various tecnologic related sciences and aspects.
 
@@ -49,8 +58,9 @@ Special thanks to python comunity for the oportunity to try colaborate.
 Escuse for my troublrd in pakage construction, i need mor prative and for me is hard to start on the right way. Some lectures are not clearly for my compreension, and i only ca sey escuse for my limitations.
 
 
-[**Website studdies:**](http://www.asl-sl.com.br)
+[**Website for my courses and studdies:**](http://www.asl-sl.com.br)
 
 
-[**Website search projects:**](http://magicbyte.tec.br)
+[**Website search engine projects:**](http://magicbyte.tec.br:8888/)
+
 

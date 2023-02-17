@@ -1,0 +1,9 @@
+LICENSE
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+dStorage.egg-info/PKG-INFO
+dStorage.egg-info/SOURCES.txt
+dStorage.egg-info/dependency_links.txt
+dStorage.egg-info/top_level.txt

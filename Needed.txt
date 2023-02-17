@@ -1,9 +1,9 @@
 Atualizar descrição/description.
-Solucionar falhas em setup.py
-warning: check: missing required meta-data: url
 
-warning: check: missing meta-data: either (author and author_email) or (maintainer and maintainer_email) should be supplied
+Implementar variáveis de PATH para o banco de dados.
 
-warning: sdist: manifest template 'MANIFEST.in' does not exist (using default file list)
+Implementar variáveis para estilização da interface Tk.
 
-warning: sdist: standard file not found: should have one of README, README.txt, README.rst
+---
+
+Adicionar suporte a banco de dados remoto(MySQL).
