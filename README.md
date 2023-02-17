@@ -5,7 +5,7 @@ Academia do software livre.
 São Lourenço, Minas Gerais - Brazil.
 
 
-the goal of the dStorage meta class is studdy and implements some other classes.
+the goal of the dStorage meta class is study and implements some other classes.
 
 The project structure need an special atention for learn in github usage.
 
@@ -16,7 +16,7 @@ Examples of usage are included in examples directory.
 
 ## first versions.
 
-My first studdies are turned to only build an simple environment.
+My first studies are turned to only build an simple environment.
 
 This environment create SQLite database, and make one integration with this database and Tk **GUI** and __CLI__ simple iterfaces.
 
@@ -47,7 +47,7 @@ The current version have insert, select, drop, data functions.
 
 [contact/contato:](mailto:feraleomg@gmail.com)
 
-I have some time studding various tecnologic related sciences and aspects.
+I have some time studying various tecnologic related sciences and aspects.
 
 During a long time i teach use, administration and development with varios UNIX Like operating systems.
 
