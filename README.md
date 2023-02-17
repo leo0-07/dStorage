@@ -58,7 +58,7 @@ Special thanks to python comunity for the oportunity to try colaborate.
 Escuse for my troublrd in pakage construction, i need mor prative and for me is hard to start on the right way. Some lectures are not clearly for my compreension, and i only ca sey escuse for my limitations.
 
 
-[**Website for my courses and studdies:**](http://www.asl-sl.com.br)
+[**Website for my courses and studies:**](http://www.asl-sl.com.br)
 
 
 [**Website search engine projects:**](http://magicbyte.tec.br:8888/)
