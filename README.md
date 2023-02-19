@@ -1,4 +1,9 @@
-# asl-sl
+# dStorage.
+
+![Alt text](img/dStorage.png "data storage")
+
+
+## asl-sl
 
 Academia do software livre.
 
