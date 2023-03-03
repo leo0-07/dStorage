@@ -67,16 +67,17 @@ class dStorage:
             
     ''' cria base de dados '''
     def cdBase(self):
-        if self.dpath == "":
-            self.database = os.getenv("HOME") +"/"+  self.database + ".db"
+        if len(self.dpath) < 1:
+            self.database = os.getenv("HOME") +"/"+  self.database
+            self.database += ".db"
 
         else:
-            self.database = self.dpath + "/" + self.database + ".db"
-
+            self.database = self.dpath + "/" + self.database
+            self.database += ".db"
+            
             if self.debug==1:
-                print (("\ndb file path" + self.dpath + "\ndb name: " + self.database),"\n")
-
-        
+                print (("\ndb filepath: " + self.dpath + " \ndb name: " + self.database),"\n")
+                
         con = sqlite3.connect(self.database)
         print("database created!")
         c = con.cursor()        
@@ -92,25 +93,33 @@ class dStorage:
             if i < (len(self.pindex) -1):
                 tfields +=", "
                 
-        cstring +="( "+tfields + " )"
-        print("db table creation string:"+ cstring + "\n")
+        cstring +="("+tfields + ")"
+        print("db table creation string: "+ cstring + "\n")
         print(cstring)
-        if cstring == "CREATE TABLE (  )":
+        if cstring == "CREATE TABLE()":
             print("no data struct defined!")
             print("no tables defined!")
             return
 
-        else:
-            c.execute(cstring)
+        print(cstring)
+        c.execute(cstring)
 
         if self.debug == 1:
             print ("database created!")
         
     ''' reads the indexes from the data corner '''
     def l_pdindex(self):
+        self.database
+        if self.debug == 1:
+            print("banco de dados " + self.database)
+            print("tabela " + self.table)
+            
         con = sqlite3.connect(self.database)
         c = con.cursor()
         sql = "PRAGMA table_info("+ self.table +")"
+        if self.debug == 1:
+            print(sql)
+            
         c.execute(sql)
         con.commit()
         tarr = []
@@ -198,12 +207,16 @@ class dStorage:
 
     ''' selects the database '''
     def setdb(self, dbname, tbname):
-        if self.dpath == "":
-            database = os.getenv("HOME") +"/"+  self.database + ".db"
+        if len(self.dpath) < 1:
+            self.database = os.getenv("HOME") +"/"+  dbname + ".db"
+            self.table = tbname
 
-        database= self.dpath + "/" + self.database + ".db"
+        else:
+            self.database= self.dpath + "/" + dbname + ".db"
+            self.table = tbname
+            
         if self.debug== 1:
-            print (("db name: " + database),"\n")
+            print (("db name: " + self.database),"\n")
         
     ''' list so members data filtered by id '''
     def litems(self):
