@@ -19,6 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.  
     This program comes with ABSOLUTELY NO WARRANTY
     This is free software, and you are welcome to redistribute it '''
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import sys, os, sqlite3
@@ -74,7 +75,10 @@ class dStorage:
             else:
                 self.database = self.dpath  + "/" + self.database
 
-            self.database += ".db"
+            print("verificar ", self.database[-3:])
+
+            if self.database[-3:] != ".db":
+                self.database += ".db"
 
             if self.debug ==1:
                 print("database creation: " + self.database)
@@ -221,8 +225,8 @@ class dStorage:
         else:
             self.database= self.dpath + "/" + dbname
             self.table = tbname
-
-        if self.database[-1:3] != ".db":
+            
+        if self.database[-3:] != ".db":
             self.database += ".db"
 
         if self.debug== 1:
