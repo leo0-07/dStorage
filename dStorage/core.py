@@ -67,51 +67,59 @@ class dStorage:
             
     ''' cria base de dados '''
     def cdBase(self):
-        if len(self.dpath) < 1:
-            self.database = os.getenv("HOME") +"/"+  self.database
-            self.database += ".db"
 
-        else:
-            self.database = self.dpath + "/" + self.database
-            self.database += ".db"
-            
-            if self.debug==1:
-                print (("\ndb filepath: " + self.dpath + " \ndb name: " + self.database),"\n")
-                
-        con = sqlite3.connect(self.database)
-        print("database created!")
-        c = con.cursor()        
-        cstring="CREATE TABLE " + self.table
-        tfields =""
-        for i in range(len(self.pindex)):
-            if i == 0:
-                tfields +=  self.pindex[i] + " integer "
+            if len(self.dpath) < 1:
+                self.database = os.getenv("HOME") +  self.database
                 
             else:
-                    tfields +=  self.pindex[i] + " text "
-                    
+                self.database = self.dpath  + "/" + self.database
+
+            self.database += ".db"
+
+            if self.debug ==1:
+                print("database creation: " + self.database)
+
+            con = sqlite3.connect(self.database)
+            if self.debug == 1:
+                print ("database filepath: ", self.dpath)
+                print("\ndatabase name", self.database ,"\n")
+
+            print("database created!")
+            c = con.cursor()
+            cstring="CREATE TABLE " + self.table
+            tfields =""
+            for i in range(len(self.pindex)):
+                if i == 0:
+                    tfields +=  self.pindex[i] + " integer "
+
+            else:
+                tfields +=  self.pindex[i] + " text "
+
             if i < (len(self.pindex) -1):
                 tfields +=", "
-                
-        cstring +="("+tfields + ")"
-        print("db table creation string: "+ cstring + "\n")
-        print(cstring)
-        if cstring == "CREATE TABLE ()":
-            print("no data struct defined!")
-            print("no tables defined!")
-            return
 
-        print(cstring)
-        c.execute(cstring)
+            cstring +="("+tfields + ")"
+            if self.debug == 1:
+                print("db table creation string: "+ cstring + "\n")
+                print(cstring)
 
-        if self.debug == 1:
-            print ("database created!")
-        
-    ''' reads the indexes from the data corner '''
+            if cstring == "CREATE TABLE ()":
+                print("no data struct defined!")
+                print("no tables defined!")
+                return
+
+            print(cstring)
+            c.execute(cstring)
+
+            if self.debug == 1:
+                print ("database created!")
+
+            ''' reads the indexes from the data corner '''
     def l_pdindex(self):
         if self.debug == 1:
-            print("banco de dados " + self.database)
-            print("\ntabela " + self.table)
+            print("loading indexes...")
+            print("banco de dados :" + self.database)
+            print("\ntabela :" + self.table)
             
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -207,18 +215,22 @@ class dStorage:
     ''' selects the database '''
     def setdb(self, dbname, tbname):
         if len(self.dpath) < 1:
-            self.database = os.getenv("HOME") +"/"+  dbname + ".db"
+            self.database = os.getenv("HOME") +"/"+  dbname
             self.table = tbname
 
         else:
-            self.database= self.dpath + "/" + dbname + ".db"
+            self.database= self.dpath + "/" + dbname
             self.table = tbname
-            
+
+        if self.database[-1:3] != ".db":
+            self.database += ".db"
+
         if self.debug== 1:
-            print (("db name: " + self.database),"\n")
+            print (("database name: " + self.database),"\n")
         
     ''' list so members data filtered by id '''
     def litems(self):
+        
         con = sqlite3.connect(self.database)
         c = con.cursor()
         c.execute(("SELECT id FROM " + self.table))

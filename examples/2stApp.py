@@ -3,7 +3,7 @@ from dStorage.core import dStorage
 
 def main():
     App = dStorage([],[])
-    App.setdb("spell","list")
+    App.setdb("test","my_table")
     App.l_pdindex()
     App.litems()
     App.display()
