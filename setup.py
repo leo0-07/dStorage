@@ -1,8 +1,8 @@
 from distutils.core import setup
 setup(name='dStorage',
-        version='1.0b0',
+        version='1.1b',
         py_modules=['dStorage'],
-        author='Leonardo de Araujo Lima',
+        author='Leonardo de Araújo Lima',
         author_email ='feraleomg@gmail.com',
         license='GPL3',
         url='https://pypi.python.org/project/dStorage/'
