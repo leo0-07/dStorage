@@ -160,7 +160,7 @@ class dStorage:
             if i  < (len(self.pdata) -1):
                 dfields +=", " 
         cstring += dfields + ")"
-        if self.self.self.debug == 1:
+        if self.debug == 1:
             print(cstring)
             
         c.execute(cstring)
