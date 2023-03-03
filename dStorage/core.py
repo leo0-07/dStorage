@@ -33,10 +33,14 @@ class dStorage:
         self.pindex = pindex
         self.lbl = []
         self.ent = []
-        self.database = ""
-        self.table = ""
+        self.dcolor="white"
+        self.icolor="blue"
+        self.dpath= ""
+        self.database =""
+        self.table=""
         self.regdata = []
         self.updted = 0
+        self.debug = 1
     ''' displays the contents of data and indexes, text mode '''
     
     def show(self):
@@ -63,9 +67,18 @@ class dStorage:
             
     ''' cria base de dados '''
     def cdBase(self):
-        database = os.getenv("HOME") +"/"+  self.database + ".db"
-        '''print (("db name: " + database),"\n")'''
+        if self.dpath == "":
+            self.database = os.getenv("HOME") +"/"+  self.database + ".db"
+
+        else:
+            self.database = self.dpath + "/" + self.database + ".db"
+
+            if self.debug==1:
+                print (("\ndb file path" + self.dpath + "\ndb name: " + self.database),"\n")
+
+        
         con = sqlite3.connect(self.database)
+        print("database created!")
         c = con.cursor()        
         cstring="CREATE TABLE " + self.table
         tfields =""
@@ -80,9 +93,18 @@ class dStorage:
                 tfields +=", "
                 
         cstring +="( "+tfields + " )"
-        print("db creation string:"+ cstring + "\n")
-        c.execute(cstring)
-        '''print ("database created!")'''
+        print("db table creation string:"+ cstring + "\n")
+        print(cstring)
+        if cstring == "CREATE TABLE (  )":
+            print("no data struct defined!")
+            print("no tables defined!")
+            return
+
+        else:
+            c.execute(cstring)
+
+        if self.debug == 1:
+            print ("database created!")
         
     ''' reads the indexes from the data corner '''
     def l_pdindex(self):
@@ -129,7 +151,9 @@ class dStorage:
             if i  < (len(self.pdata) -1):
                 dfields +=", " 
         cstring += dfields + ")"
-        print(cstring)                        
+        if self.self.self.debug == 1:
+            print(cstring)
+            
         c.execute(cstring)
         con.commit()
         self.updted = 1
@@ -164,7 +188,9 @@ class dStorage:
         con = sqlite3.connect(self.database)
         c = con.cursor()
         searchstring= str("SELECT id FROM " + self.table + " WHERE "+ name + "='" +  value +"'")
-        print(searchstring)
+        if self.debug == 1:
+            print(searchstring)
+        
         rst = c.execute(searchstring)
         return rst.fetchone()
         c.commit()
@@ -172,9 +198,12 @@ class dStorage:
 
     ''' selects the database '''
     def setdb(self, dbname, tbname):
-        self.database = os.getenv("HOME") +"/"+  dbname + ".db"
-        self.table = tbname
-        '''print ("db name: " + database)'''
+        if self.dpath == "":
+            database = os.getenv("HOME") +"/"+  self.database + ".db"
+
+        database= self.dpath + "/" + self.database + ".db"
+        if self.debug== 1:
+            print (("db name: " + database),"\n")
         
     ''' list so members data filtered by id '''
     def litems(self):
@@ -199,7 +228,7 @@ class dStorage:
     ''' registers using graphical interface '''
     def cad(self):
         wnd = Tk()
-        wnd.configure(background="blue")
+        wnd.configure(background=self.icolor)
         self.lbl= []
         self.ent= []
         i = 0

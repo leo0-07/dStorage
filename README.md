@@ -1,6 +1,6 @@
 # dStorage.
 
-![Alt text](img/dStorage.png "data storage")
+![Logo](img/dStorage.png "data storage")
 
 
 ## asl-sl
@@ -27,10 +27,11 @@ This environment create SQLite database, and make one integration with this data
 
 On the second moment i try made one CLI interface on same database controlled by base class structures.
 
-> Now i need learn and write the pacckge structure on the right way, following the rules to 
+> Now i need learn and write the package structure on the right way, following the rules to 
 > devel python applications. at moment this software work, but i think with it is only an 
 > outline.
-
+> Older versions creates database file on user home directory, the recent versions have a property to make these path.
+> Also on the recent versions i try improve dialogs properties, is possible change window color for input **GUI** dialog.
 
 This goal, are satisfied.
 
