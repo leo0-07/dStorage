@@ -69,7 +69,7 @@ class dStorage:
     ''' cria base de dados '''
     def cdBase(self):
 
-            if len(self.dpath) < 1:
+            if len(self.dpath) > 1:
                 self.database = os.getenv("HOME") +  self.database
                 
             else:
@@ -218,7 +218,7 @@ class dStorage:
 
     ''' selects the database '''
     def setdb(self, dbname, tbname):
-        if len(self.dpath) < 1:
+        if len(self.dpath) > 1:
             self.database = os.getenv("HOME") +"/"+  dbname
             self.table = tbname
 
