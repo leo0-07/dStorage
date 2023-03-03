@@ -3,10 +3,9 @@ from dStorage.core import dStorage
 
 def main():
     App = dStorage([],[])
-    App.setdb("test","my_table")
+    App.setdb("spell","list")
     App.l_pdindex()
     App.litems()
-    App.loaddata(1)
     App.display()
 
     

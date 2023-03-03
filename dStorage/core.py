@@ -96,7 +96,7 @@ class dStorage:
         cstring +="("+tfields + ")"
         print("db table creation string: "+ cstring + "\n")
         print(cstring)
-        if cstring == "CREATE TABLE()":
+        if cstring == "CREATE TABLE ()":
             print("no data struct defined!")
             print("no tables defined!")
             return
@@ -109,10 +109,9 @@ class dStorage:
         
     ''' reads the indexes from the data corner '''
     def l_pdindex(self):
-        self.database
         if self.debug == 1:
             print("banco de dados " + self.database)
-            print("tabela " + self.table)
+            print("\ntabela " + self.table)
             
         con = sqlite3.connect(self.database)
         c = con.cursor()
@@ -244,7 +243,11 @@ class dStorage:
         wnd.configure(background=self.icolor)
         self.lbl= []
         self.ent= []
+        self.l_pdindex()
         i = 0
+        if self.debug == 1:
+            print(self.pindex)
+        
         for item in self.pindex:
             self.lbl.append(Label(wnd,text=item))
             self.lbl[i].grid(row=i,column=0)
