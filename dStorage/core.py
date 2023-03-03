@@ -219,7 +219,7 @@ class dStorage:
     ''' selects the database '''
     def setdb(self, dbname, tbname):
         if len(self.dpath) > 1:
-            self.database = os.getenv("HOME") +"/"+  dbname
+            self.database = os.getenv("HOME") +  dbname
             self.table = tbname
 
         else:
