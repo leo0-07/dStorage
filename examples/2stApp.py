@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 from dStorage.core import dStorage
-
+import os
 def main():
     App = dStorage([],[])
-    App.setdb("test","my_table")
+    dbpath = os.path.expanduser("~/Documentos")
+    App.dpath=dbpath
+    App.database="storm.db"
+    App.table ="good"
     App.l_pdindex()
-    App.litems()
+    App.loaddata(1)
+    App.show()
     App.display()
-
     
     
 if __name__ == "__main__":

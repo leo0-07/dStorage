@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 from dStorage.core import dStorage
-
+import os
 def main():
-    App = dStorage([0, "", "", ""],["id", "name", "last_name"])
-    App.setdb("test","my_table")
-    App.dpath="/home/leonardo"
-    print("Application ",App.database)
-    print("Application ",App.table)
+    dbpath = os.path.expanduser("~/Documentos")
+    App = dStorage(["id", "name", "last_name"],[1, "gratitude", "gratidão"])
+    App.dpath=dbpath
+    App.database="storm.db"
+    App.table ="good"
+    App.cdBase()
+
+    App.cad()
+    
     
 if __name__ == "__main__":
     main()

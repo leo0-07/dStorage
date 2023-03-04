@@ -29,7 +29,8 @@ import array
 
 class dStorage:
     
-    def __init__(self,pdata, pindex):
+    def __init__(self,pindex,pdata):
+        self.version="1.0rc1"
         self.pdata = pdata
         self.pindex = pindex
         self.lbl = []
@@ -43,15 +44,23 @@ class dStorage:
         self.updted = 0
         self.debug = 1
     ''' displays the contents of data and indexes, text mode '''
+
+    def version(self):
+        return self.version
     
     def show(self):
         print("informações:")
+        self.dbinfo()
         for i in range(len(self.pdata)):
             print(self.pindex[i],": ", self.pdata[i])
     ''' displays the data contents and indexes, graph mode '''
 
     def set_database(self, value):
-        self.database = value + ".db"
+        if len(self.dpath) > 1:
+            self.database = self.dpath  + value + ".db"
+
+        else:
+            print("file path not specified!")
     
     def display(self):
             window =Tk()
@@ -69,56 +78,36 @@ class dStorage:
 
             window.mainloop()
             
-    ''' cria base de dados '''
     def cdBase(self):
-        if self.debug ==1:
-            print("database creation: " + self.database)
-
+        database = os.getenv("HOME") +"/"+  self.database + ".db"
+        '''print (("db name: " + database),"\n")'''
         con = sqlite3.connect(self.database)
-        if self.debug == 1:
-            print ("database filepath: ", self.dpath)
-            print("\ndatabase name", self.database ,"\n")
-
-            print("database created!")
-            c = con.cursor()
-            cstring="CREATE TABLE " + self.table
-            tfields =""
-            for i in range(len(self.pindex)):
-                    if i == 0:
-                        tfields +=  self.pindex[i] + " integer "
-
-                    else:
-                        tfields +=  self.pindex[i] + " text "
-
-                    if i < (len(self.pindex) -1):
-                        tfields +=", "
-
-            cstring +="("+tfields + ")"
-            if self.debug == 1:
-                print("db table creation string: "+ cstring + "\n")
-                print(cstring)
-
-            if cstring == "CREATE TABLE ()":
-                print("no data struct defined!")
-                print("no tables defined!")
-                return
-
-                print(cstring)
-                c.execute(cstring)
-
-                if self.debug == 1:
-                    print ("database created!")
+        c = con.cursor()        
+        cstring="CREATE TABLE " + self.table
+        tfields =""
+        for i in range(len(self.pindex)):
+            print(self.pindex[i])
+            if i == 0:
+                tfields +=  str(self.pindex[i]) + " integer "
+                
+            else:
+                    tfields +=  str(self.pindex[i]) + " text "
+                    
+            if i < (len(self.pindex) -1):
+                tfields +=", "
+                
+        cstring +="( "+tfields + " )"
+        print("db creation string:"+ cstring + "\n")
+        c.execute(cstring)
+        '''print ("database created!")'''
 
     ''' reads the indexes from the data corner '''
+    
     def l_pdindex(self):
         if self.debug == 1:
-            print("loading indexes...")
-            print("data path ",self.dpath)
-            print("\nbanco de dados :" + self.database)
-            print("\ntabela :" + self.table)
-            database = self.dpath + "/" + self.database
+            self.dbinfo()
             
-        con = sqlite3.connect(database)
+        con = sqlite3.connect(self.database)
         c = con.cursor()
         sql = "PRAGMA table_info("+ self.table +")"
         if self.debug == 1:
@@ -149,9 +138,14 @@ class dStorage:
 
     ''' saves the data from the current record to your table '''
     def savedata(self):
+        if self.debug ==1 :
+            print("savedata")
+            self.dbinfo()
+
+        dfields = ""
+        print("arquivo",self.database)
         con = sqlite3.connect(self.database)
         c = con.cursor()
-        dfields = ""
         cstring = "INSERT INTO "+ self.table + " VALUES("
         for i in range(len(self.pdata)):
             
@@ -162,18 +156,21 @@ class dStorage:
                 dfields += str(self.pdata[i])
 
             if i  < (len(self.pdata) -1):
-                dfields +=", " 
-        cstring += dfields + ")"
+                dfields +=", "
+                
+        cstring += dfields + " )"
         if self.debug == 1:
             print(cstring)
             
         c.execute(cstring)
         con.commit()
-        self.updted = 1
         con.close()
-    
-    ''' performs the reading of the data members of the instance '''
+        self.updted = 1
+ 
     def loaddata(self,  reg):
+        if self.debug ==1 :
+            print("loaddata")
+            self.dbinfo()
         con = sqlite3.connect(self.database)
         c = con.cursor()
         cstring= str("SELECT * FROM " + self.table + " WHERE id=:ireg")
@@ -212,22 +209,20 @@ class dStorage:
     ''' selects the database '''
     def setdb(self, dbname, tbname):
         if len(self.dpath) > 1:
-            self.database = os.getenv("HOME") +  dbname
+            self.set_database = os.getenv("HOME") +  dbname
             self.table = tbname
 
         else:
             self.database= self.dpath + "/" + dbname
             self.table = tbname
             
-        if self.database[-3:] != ".db":
-            self.database += ".db"
-
+            self.set_database(dbname)
         if self.debug== 1:
             print (("database name: " + self.database),"\n")
         
     ''' list so members data filtered by id '''
     def litems(self):
-        
+        self.dbinfo()
         con = sqlite3.connect(self.database)
         c = con.cursor()
         c.execute(("SELECT id FROM " + self.table))
@@ -277,8 +272,17 @@ class dStorage:
         listd = []
         for item in self.pindex:
             listd.append(input("entre com o valor para "+ item + ":"))
-
+      
         self.pdata = tuple(listd)
+
+
+    def dbinfo(self):
+        if self.debug == 1:
+            print("informações da base de dados")
+            print("file path ",self.dpath)
+            print("database ",self.database)
+        print("data table ",self.table)
+        
 
 
 
