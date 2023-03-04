@@ -30,7 +30,7 @@ import array
 class dStorage:
     
     def __init__(self,pindex,pdata):
-        self.version="1.0rc1"
+        self.version="1.1.2rc1"
         self.pdata = pdata
         self.pindex = pindex
         self.lbl = []
