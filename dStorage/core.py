@@ -74,16 +74,16 @@ class dStorage:
         if self.debug ==1:
             print("database creation: " + self.database)
 
-                con = sqlite3.connect(self.database)
-                if self.debug == 1:
-                    print ("database filepath: ", self.dpath)
-                    print("\ndatabase name", self.database ,"\n")
+        con = sqlite3.connect(self.database)
+        if self.debug == 1:
+            print ("database filepath: ", self.dpath)
+            print("\ndatabase name", self.database ,"\n")
 
-                print("database created!")
-                c = con.cursor()
-                cstring="CREATE TABLE " + self.table
-                tfields =""
-                for i in range(len(self.pindex)):
+            print("database created!")
+            c = con.cursor()
+            cstring="CREATE TABLE " + self.table
+            tfields =""
+            for i in range(len(self.pindex)):
                     if i == 0:
                         tfields +=  self.pindex[i] + " integer "
 
@@ -93,15 +93,15 @@ class dStorage:
                     if i < (len(self.pindex) -1):
                         tfields +=", "
 
-                cstring +="("+tfields + ")"
-                if self.debug == 1:
-                    print("db table creation string: "+ cstring + "\n")
-                    print(cstring)
+            cstring +="("+tfields + ")"
+            if self.debug == 1:
+                print("db table creation string: "+ cstring + "\n")
+                print(cstring)
 
-                if cstring == "CREATE TABLE ()":
-                    print("no data struct defined!")
-                    print("no tables defined!")
-                    return
+            if cstring == "CREATE TABLE ()":
+                print("no data struct defined!")
+                print("no tables defined!")
+                return
 
                 print(cstring)
                 c.execute(cstring)
@@ -113,10 +113,12 @@ class dStorage:
     def l_pdindex(self):
         if self.debug == 1:
             print("loading indexes...")
-            print("banco de dados :" + self.database)
+            print("data path ",self.dpath)
+            print("\nbanco de dados :" + self.database)
             print("\ntabela :" + self.table)
+            database = self.dpath + "/" + self.database
             
-        con = sqlite3.connect(self.database)
+        con = sqlite3.connect(database)
         c = con.cursor()
         sql = "PRAGMA table_info("+ self.table +")"
         if self.debug == 1:
