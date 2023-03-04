@@ -5,7 +5,7 @@ def main():
     dbpath = os.path.expanduser("~/Documentos")
     App = dStorage(["id", "name", "last_name"],[1, "gratitude", "gratidão"])
     App.dpath=dbpath
-    App.database="storm.db"
+    App.set_database("storm")
     App.table ="good"
     App.cdBase()
 

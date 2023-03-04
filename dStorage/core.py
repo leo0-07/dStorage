@@ -57,7 +57,7 @@ class dStorage:
 
     def set_database(self, value):
         if len(self.dpath) > 1:
-            self.database = self.dpath  + value + ".db"
+            self.database = self.dpath  + "/"+ value + ".db"
 
         else:
             print("file path not specified!")
