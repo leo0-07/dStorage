@@ -69,56 +69,50 @@ class dStorage:
     ''' cria base de dados '''
     def cdBase(self):
 
-            if len(self.dpath) > 1:
                 self.database = os.getenv("HOME") +  self.database
-                
-            else:
-                self.database = self.dpath  + "/" + self.database
+                print("verificar ", self.database[-3:])
+                if self.database[-3:] != ".db":
+                    self.database += ".db"
 
-            print("verificar ", self.database[-3:])
+                if self.debug ==1:
+                    print("database creation: " + self.database)
 
-            if self.database[-3:] != ".db":
-                self.database += ".db"
+                con = sqlite3.connect(self.database)
+                if self.debug == 1:
+                    print ("database filepath: ", self.dpath)
+                    print("\ndatabase name", self.database ,"\n")
 
-            if self.debug ==1:
-                print("database creation: " + self.database)
+                print("database created!")
+                c = con.cursor()
+                cstring="CREATE TABLE " + self.table
+                tfields =""
+                for i in range(len(self.pindex)):
+                    if i == 0:
+                        tfields +=  self.pindex[i] + " integer "
 
-            con = sqlite3.connect(self.database)
-            if self.debug == 1:
-                print ("database filepath: ", self.dpath)
-                print("\ndatabase name", self.database ,"\n")
+                    else:
+                        tfields +=  self.pindex[i] + " text "
 
-            print("database created!")
-            c = con.cursor()
-            cstring="CREATE TABLE " + self.table
-            tfields =""
-            for i in range(len(self.pindex)):
-                if i == 0:
-                    tfields +=  self.pindex[i] + " integer "
+                    if i < (len(self.pindex) -1):
+                        tfields +=", "
 
-            else:
-                tfields +=  self.pindex[i] + " text "
+                cstring +="("+tfields + ")"
+                if self.debug == 1:
+                    print("db table creation string: "+ cstring + "\n")
+                    print(cstring)
 
-            if i < (len(self.pindex) -1):
-                tfields +=", "
+                if cstring == "CREATE TABLE ()":
+                    print("no data struct defined!")
+                    print("no tables defined!")
+                    return
 
-            cstring +="("+tfields + ")"
-            if self.debug == 1:
-                print("db table creation string: "+ cstring + "\n")
                 print(cstring)
+                c.execute(cstring)
 
-            if cstring == "CREATE TABLE ()":
-                print("no data struct defined!")
-                print("no tables defined!")
-                return
+                if self.debug == 1:
+                    print ("database created!")
 
-            print(cstring)
-            c.execute(cstring)
-
-            if self.debug == 1:
-                print ("database created!")
-
-            ''' reads the indexes from the data corner '''
+    ''' reads the indexes from the data corner '''
     def l_pdindex(self):
         if self.debug == 1:
             print("loading indexes...")
