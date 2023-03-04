@@ -49,12 +49,15 @@ class dStorage:
         for i in range(len(self.pdata)):
             print(self.pindex[i],": ", self.pdata[i])
     ''' displays the data contents and indexes, graph mode '''
+
+    def set_database(self, value):
+        self.database = value + ".db"
     
     def display(self):
             window =Tk()
             window.configure(background='blue')
             window.title("Data wire visualization!")
-            output = Text(window, background="white")
+            output = Text(window, background=self.dcolor)
             output.grid()
             window.okb = Button(window,text="Exit",command=window.destroy)
             window.okb.grid()
@@ -68,14 +71,8 @@ class dStorage:
             
     ''' cria base de dados '''
     def cdBase(self):
-
-                self.database = os.getenv("HOME") +  self.database
-                print("verificar ", self.database[-3:])
-                if self.database[-3:] != ".db":
-                    self.database += ".db"
-
-                if self.debug ==1:
-                    print("database creation: " + self.database)
+        if self.debug ==1:
+            print("database creation: " + self.database)
 
                 con = sqlite3.connect(self.database)
                 if self.debug == 1:
