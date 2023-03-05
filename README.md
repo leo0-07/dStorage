@@ -15,7 +15,7 @@ the goal of the dStorage meta class is study and implements some other classes.
 The project structure need a special atention for learn in github usage.
 
 the dStorage class give some funcions to create databases, and automaticaly
-generate an gui and console interface for the data class and database.
+generate a gui and console interface for the data class and database.
 
 Examples of usage are included in examples directory.
 
@@ -37,7 +37,7 @@ This goal, are satisfied.
 
 The base class, is based in one multidimensional array data type.
 
-That show a simple use of these data types.
+That show an simple use of these data types.
 
 The integration with CLI and GUI interface are builded by base class.
 
@@ -63,13 +63,13 @@ The library can be installed using python [**pip.**](https://pypi.org/project/dS
 
 I have some time studying various tecnologic related sciences and aspects.
 
-During a long time i teach use, administration and development with varios UNIX Like operating systems.
+During a long time i teach use, administration and development with some UNIX Like operating systems.
 
 Excuse some troubles in my codes, i try be better....
 
 Grateful.
-Special thanks to python comunity for the oportunity to try colaborate.
-Excuse for my troublrd in pakage construction, i need more pratice and for me is hard to restart on the right way. Some lectures are not clearly for my compreension, and i only can sey forgive for my limitations.
+Special thanks to python comunity for the oportunity to colaborate.
+Excuse for my troublrd in package construction, i need more pratice and for me is hard to restart on the right way. Some lectures are not clearly for my compreension, and i only can say forgive me for my limitations.
 
 
 [**Website for my courses and studies:**](http://www.asl-sl.com.br)
