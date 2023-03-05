@@ -12,7 +12,7 @@ São Lourenço, Minas Gerais - Brazil.
 
 the goal of the dStorage meta class is study and implements some other classes.
 
-The project structure need an special atention for learn in github usage.
+The project structure need a special atention for learn in github usage.
 
 the dStorage class give some funcions to create databases, and automaticaly
 generate an gui and console interface for the data class and database.
@@ -21,7 +21,7 @@ Examples of usage are included in examples directory.
 
 ## first versions.
 
-My first studies are turned to only build an simple environment.
+My first studies are turned to only build a simple environment.
 
 This environment create SQLite database, and make one integration with this database and Tk **GUI** and __CLI__ simple iterfaces.
 
@@ -51,6 +51,14 @@ One rule for base class use, is at moment, is needed one data member "id" on any
 
 The current version have insert, select, drop, data functions.
 
+Also have some good options like optimization of file paths and colors for dialogs on **GUI.**
+
+The library can be installed using python [**pip.**](https://pypi.org/project/dStorage/)
+
+> python -m pip install --user dStorage
+
+> the actual upstream release is on current [**git**](https://github.com/leo0-07/dStorage) branch.
+
 [contact/contato:](mailto:feraleomg@gmail.com)
 
 I have some time studying various tecnologic related sciences and aspects.
@@ -61,7 +69,7 @@ Excuse some troubles in my codes, i try be better....
 
 Grateful.
 Special thanks to python comunity for the oportunity to try colaborate.
-Escuse for my troublrd in pakage construction, i need mor prative and for me is hard to start on the right way. Some lectures are not clearly for my compreension, and i only ca sey escuse for my limitations.
+Excuse for my troublrd in pakage construction, i need more pratice and for me is hard to restart on the right way. Some lectures are not clearly for my compreension, and i only can sey forgive for my limitations.
 
 
 [**Website for my courses and studies:**](http://www.asl-sl.com.br)
