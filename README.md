@@ -1,6 +1,6 @@
 # dStorage.
 
-![Logo](img/dStorage.png "data storage")
+![Logo](https://asl-sl.com.br/dstorage/img/dStorage.png "data storage")
 
 
 ## asl-sl
