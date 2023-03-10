@@ -1,9 +1,9 @@
 # dStorage.
 
-![Logo](https://asl-sl.com.br/dstorage/img/dStorage.png "data storage")
+![Logo](https://asl-sl.com.br/dstorage/img/dStorage.png)
 
 
-## asl-sl
+## asl-sl (São Lourenço - MG, Brazil)
 
 Academia do software livre.
 
