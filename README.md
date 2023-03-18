@@ -61,7 +61,7 @@ The library can be installed using python [**pip.**](https://pypi.org/project/dS
 
 [contact/contato:](mailto:feraleomg@gmail.com)
 
-I have some time studying various tecnologic related sciences and aspects.
+I have some time studying diferent tecnological related sciences and aspects.
 
 During a long time I teach use, administration and development with some UNIX Like operating systems.
 
@@ -81,7 +81,7 @@ Excuse for my troubles in package construction, I need more pratice and for me i
 [**Website search engine projects:**](http://magicbyte.tec.br:8888/)
 
 
-> Here I install one public seaech __engine__ for studies end learning purposes.
+> Here I install one public search __engine__ for studies end learning purposes.
 
 > The software used, also promotes one metasearch, and small crawler.
 

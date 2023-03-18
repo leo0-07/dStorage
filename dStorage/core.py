@@ -30,7 +30,7 @@ import array
 class dStorage:
     
     def __init__(self,pindex,pdata):
-        self.version="1.1.2rc1"
+        self.version="1.1.3rc1"
         self.pdata = pdata
         self.pindex = pindex
         self.lbl = []
@@ -43,24 +43,28 @@ class dStorage:
         self.regdata = []
         self.updted = 0
         self.debug = 1
-    ''' displays the contents of data and indexes, text mode '''
+    ''' displays version  '''
 
     def version(self):
         return self.version
+    
+    ''' displays the contents of data and indexes, text mode '''
     
     def show(self):
         print("informações:")
         self.dbinfo()
         for i in range(len(self.pdata)):
             print(self.pindex[i],": ", self.pdata[i])
-    ''' displays the data contents and indexes, graph mode '''
+
+    ''' set database file '''
 
     def set_database(self, value):
         if len(self.dpath) > 1:
-            self.database = self.dpath  + "/"+ value + ".db"
-
+            self.database = self.dpath  + value + ".db"
+            
         else:
             print("file path not specified!")
+    ''' displays the data contents and indexes, graph mode '''
     
     def display(self):
             window =Tk()
@@ -77,14 +81,16 @@ class dStorage:
                 output.insert(END, "\n")
 
             window.mainloop()
-            
+    
+    ''' create database file '''
     def cdBase(self):
-        database = os.getenv("HOME") +"/"+  self.database + ".db"
-        '''print (("db name: " + database),"\n")'''
+        if self.debug == 1:
+            self.dbinfo()
+        
         con = sqlite3.connect(self.database)
         c = con.cursor()        
-        cstring="CREATE TABLE " + self.table
-        tfields =""
+        cstring="CREATE TABLE " + self.table + " ("
+        tfields =" "
         for i in range(len(self.pindex)):
             print(self.pindex[i])
             if i == 0:
@@ -94,12 +100,15 @@ class dStorage:
                     tfields +=  str(self.pindex[i]) + " text "
                     
             if i < (len(self.pindex) -1):
-                tfields +=", "
+                tfields +=" , "
                 
-        cstring +="( "+tfields + " )"
-        print("db creation string:"+ cstring + "\n")
+        cstring +=" "+tfields + " "
+
+        cstring+= ")"
+        if self.debug == 1:
+            print(cstring)
+            
         c.execute(cstring)
-        '''print ("database created!")'''
 
     ''' reads the indexes from the data corner '''
     
@@ -154,7 +163,7 @@ class dStorage:
 
             else:
                 dfields += str(self.pdata[i])
-
+        
             if i  < (len(self.pdata) -1):
                 dfields +=", "
                 
@@ -166,9 +175,9 @@ class dStorage:
         con.commit()
         con.close()
         self.updted = 1
- 
+    
     def loaddata(self,  reg):
-        if self.debug ==1 :
+        if self.debug == 1:
             print("loaddata")
             self.dbinfo()
         con = sqlite3.connect(self.database)
@@ -183,9 +192,12 @@ class dStorage:
             self.pdata=tuple(tarr)
             i += 1
         con.close()
-
+    
     '''delete records'''
     def deletedata(self,  reg):
+        if self.debug == 1:
+            print("deletedata")
+            self.dbinfo()
         con = sqlite3.connect(self.database)
         c = con.cursor()
         cstring= str("DELETE FROM " + self.table + " WHERE id=:ireg")

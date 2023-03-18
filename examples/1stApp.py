@@ -7,7 +7,7 @@ def main():
     App.dpath=dbpath
     App.set_database("storm")
     App.table ="good"
-    App.cdBase()
+    '''App.cdBase()'''
 
     App.cad()
     
