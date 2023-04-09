@@ -87,3 +87,21 @@ Excuse for my troubles in package construction, I need more pratice and for me i
 
 > You are welcome to known and colaborate.
 
+**Estudos, pesquisas, suporte e desenvolvimento.**
+> Coordenação: (Prof. __Leonardo__)
+
+> **Linux77.**
+
+**contato:**
+
+### **Mônica.**
+
+**fone:** (35)99853-7574.
+
+**email:** [Mônica](monijucodoro@gmail.com) 
+
+[Academia do software livre **Brasil - MG**](http://www.asl-sl.com.br)
+
+[Courses and studies**](http://www.cursos.asl-sl.com.br)
+
+[contact](mailto:feraleomg@gmail.com)
