@@ -1,8 +1,11 @@
 LICENSE
 LICENSE.txt
 README.md
+README.txt
 pyproject.toml
 setup.py
+dStorage/__init__.py
+dStorage/core.py
 dStorage.egg-info/PKG-INFO
 dStorage.egg-info/SOURCES.txt
 dStorage.egg-info/dependency_links.txt
