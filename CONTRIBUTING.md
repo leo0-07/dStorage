@@ -5,6 +5,6 @@ Thinking about it, i wrote some years ago, this simple lirbary, but recently, I 
 If you can study with me I try share my knownledge about programming and other sciences with I study.
 The goal of some studies is not turned only to tecnological tecniques, but also to relationship between human sciences and math areas.
 Using one simple interface, based on **CLI**, with input, output simple methods I can build a functional database application.
-Also using _Tk_ resources I can improve the database access in same class and funcions structure.
+Also using _Tk_ to produce **GUI** interfaces resources I can improve the database access in same class and funcions structure.
 The base class, permits a good integrations, and usage of input/output of data to database.
 Grateful, andyou are welcome to  this project.
