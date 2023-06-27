@@ -47,7 +47,7 @@ Also are provide one simple find method.
 
 One rule for base class use, is at moment, is needed one data member "id" on any derived class.
 
-## Current.
+## current.
 
 The current version have insert, select, drop, data functions.
 
@@ -78,7 +78,7 @@ Excuse for my troubles in package construction, I need more pratice and for me i
 > On my courses and studies **website** I use __portuguese,__ my natural language.
 
 
-[**Website search engine projects:**](http://magicbyte.tec.br:8888/)
+[**We** have some structure on web a simple _search_](http://eureka.magicbyte.tec.br/)
 
 
 > Here I install one public search __engine__ for studies end learning purposes.
