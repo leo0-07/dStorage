@@ -78,7 +78,7 @@ Excuse for my troubles in package construction, I need more pratice and for me i
 > On my courses and studies **website** I use __portuguese,__ my natural language.
 
 
-[**We** have some structure on web a simple _search_](http://eureka.magicbyte.tec.br/)
+**We** have some structure on web a simple [_search_](http://eureka.magicbyte.tec.br/)
 
 
 > Here I install one public search __engine__ for studies end learning purposes.
