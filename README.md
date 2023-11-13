@@ -111,7 +111,7 @@ _contact_**/contato:**
 
 **fone:** (35) 99120-5702.
 
-> [email](leonardo@asl-sl.com.br)
+> [email](mailto:leonardo@asl-sl.com.br)
 
 > **Linux77.**
 
@@ -119,14 +119,14 @@ _contact_**/contato:**
 
 **fone:** (35) 99853-7574.
 
-**email:** [Mônica](monijucodoro@gmail.com)
+**email:** [Mônica](mailto:monijucodoro@gmail.com)
 
-[Academia do software livre **Brasil - MG**](www.asl-sl.com.br)
+[Academia do software livre **Brasil - MG**](http://www.asl-sl.com.br)
 
-[Courses and studies**](www.cursos.asl-sl.com.br)
+[Courses and studies**](http://www.cursos.asl-sl.com.br)
 
-[Um pouco sobre nossa cidade!](www.asl-br.com/TMB)
+[Um pouco sobre nossa cidade!](http://www.asl-br.com/TMB)
 
-[As short about our City!](www.asl-br.com/TMB)
+[A short about our City!](http://www.asl-br.com/TMB)
 
 [contact](mailto:feraleomg@gmail.com)
