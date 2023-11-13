@@ -87,21 +87,46 @@ Excuse for my troubles in package construction, I need more pratice and for me i
 
 > You are welcome to known and colaborate.
 
-**Estudos, pesquisas, suporte e desenvolvimento.**
-> Coordenação: (Prof. __Leonardo__)
+
+_contact_**/contato:**
+
+### Leonardo.
+
+> Apaixonado por tecnologia, professor com graduação em ensino fundamental e médio.
+
+> Desde menino ainda na década de 80 sempre acompanhando evoluções em telecomunicações.
+
+> Radio amador quando jovem, ainda me lembro de antever tecnologias, em nossos ideiais.
+
+> Programador com experiência em linguagens de alto e baixo nível....
+
+> Tive influências de conhecidos e parentes dobre questões de conhcer ambientes na época distantes da maior parte das pessoas.
+
+> ainda me recordo de uma _tia_, programadora de ambientes UNIX, na época de locação de mainframes, me despertou o interesse por me aprofundar em tais estudos.
+
+> Muitos anos depois tive meus primeiros contatos com ambiente BSD's e Linux o que despertou uma paixão adormecida.
+
+> Hoje tenho mais de 20 anos de ensino técnico em uma estrutura prórpia, a qual em minha pequena cidade e região mostrou eficácia, mudando a vida de muitos adolescentees hoje profissionais espealhados por várias localidades.
+
+
+**fone:** (35) 99120-5702.
+
+> [email](leonardo@asl-sl.com.br)
 
 > **Linux77.**
 
-**contato:**
+### Mônica.
 
-### **Mônica.**
+**fone:** (35) 99853-7574.
 
-**fone:** (35)99853-7574.
+**email:** [Mônica](monijucodoro@gmail.com)
 
-**email:** [Mônica](monijucodoro@gmail.com) 
+[Academia do software livre **Brasil - MG**](www.asl-sl.com.br)
 
-[Academia do software livre **Brasil - MG**](http://www.asl-sl.com.br)
+[Courses and studies**](www.cursos.asl-sl.com.br)
 
-[Courses and studies**](http://www.cursos.asl-sl.com.br)
+[Um pouco sobre nossa cidade!](www.asl-br.com/TMB)
+
+[As short about our City!](www.asl-br.com/TMB)
 
 [contact](mailto:feraleomg@gmail.com)
