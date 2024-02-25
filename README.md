@@ -16,7 +16,7 @@ The project structure have a special atention  in github usage.
 
 the **dStorage** class provide some funcions to create databases associated to class data members, and automaticaly
 generate a **GUI** and **CLI** interface for the data class members and database.
-Also the class provide simple functions to detect the interface environment used and select the reight interface to use.
+Also the class provide simple functions to detect the interface environment used and select the right interface to use.
 Som properties can be changed to permit manual operation in interface usage.
 By default the class use a small method to detect tty type of program invocation.
 Using this simple tecnique the object, select the function to be used in data presentation.
