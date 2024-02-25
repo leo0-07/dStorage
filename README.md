@@ -10,12 +10,16 @@ Academia do software livre.
 São Lourenço, Minas Gerais - Brazil.
 
 
-the goal of the dStorage meta class is study and implements some other classes.
+the goal of the **dStorage** meta class is make a study and give a small structure to other classes.
 
-The project structure need a special atention for learn in github usage.
+The project structure have a special atention  in github usage.
 
-the dStorage class give some funcions to create databases, and automaticaly
-generate a gui and console interface for the data class and database.
+the **dStorage** class provide some funcions to create databases associated to class data members, and automaticaly
+generate a **GUI** and **CLI** interface for the data class members and database.
+Also the class rpvide simple functions to detect the interface environment used and select the reight interface to use.
+Som properties can be changed to permit manual operation in interface usage.
+By default the class use a small method to detect tty type of program invocation.
+Using this simple tecnique the object, select the function to be used in data presentation.
 
 Examples of usage are included in examples directory.
 
@@ -109,7 +113,7 @@ _contact_**/contato:**
 > Hoje tenho mais de 20 anos de ensino técnico em uma estrutura prórpia, a qual em minha pequena cidade e região mostrou eficácia, mudando a vida de muitos adolescentees hoje profissionais espealhados por várias localidades.
 
 
-**fone:** (35) 99120-5702.
+**fone:** +55 (35) 98479-7532.
 
 > [email](mailto:leonardo@asl-sl.com.br)
 
@@ -117,7 +121,7 @@ _contact_**/contato:**
 
 ### Mônica.
 
-**fone:** (35) 99853-7574.
+**fone:** +55 (35) 99853-7574.
 
 **email:** [Mônica](mailto:monijucodoro@gmail.com)
 
